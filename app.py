@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from openai import OpenAI
 import faiss, pickle
 from sentence_transformers import SentenceTransformer
+from dotenv import load_dotenv
 
 app = FastAPI()
 
@@ -13,6 +14,8 @@ with open("chunks.pkl", "rb") as f:
 
 import os
 from openai import OpenAI
+
+load_dotenv() 
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
